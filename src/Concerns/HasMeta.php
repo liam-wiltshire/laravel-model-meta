@@ -3,7 +3,6 @@
 namespace LiamWiltshire\LaravelModelMeta\Concerns;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Collection;
 
 trait HasMeta
 {
@@ -18,8 +17,11 @@ trait HasMeta
     public function getTableFields(): array
     {
         if (!$this->tableFields) {
-            $fields = new Collection($this->getConnection()->select("DESC {$this->getTable()}"));
-            $this->tableFields = array_flip($fields->pluck(["Field"])->toArray());
+            $connection = $this->getConnection();
+
+            $fields = $connection->getSchemaBuilder()->getColumnListing($this->getTable());
+
+            $this->tableFields = array_flip($fields);
         }
 
         return $this->tableFields;
