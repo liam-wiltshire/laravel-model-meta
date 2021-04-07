@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 trait HasMeta
 {
 
-    protected $tableFields;
+    protected static $tableFields;
 
     /**
      * Get all the fields for this models DB table
@@ -16,15 +16,15 @@ trait HasMeta
      */
     public function getTableFields(): array
     {
-        if (!$this->tableFields) {
+        if (!self::$tableFields) {
             $connection = $this->getConnection();
 
             $fields = $connection->getSchemaBuilder()->getColumnListing($this->getTable());
 
-            $this->tableFields = array_flip($fields);
+            self::$tableFields = array_flip($fields);
         }
 
-        return $this->tableFields;
+        return self::$tableFields;
     }
 
     /**
