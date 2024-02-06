@@ -1,5 +1,5 @@
 {
-  "name": "zmjafary/laravel-model-meta",
+  "name": "liam-wiltshire/laravel-model-meta",
   "description": "Metadata support for Eloquent",
   "license": "MIT",
   "authors": [
@@ -10,7 +10,7 @@
   ],
   "require": {
     "php": ">=7.1.0",
-    "illuminate/database": "^5.5.0|^6.0|^7.0|^8.0|^9.21|^10.0"
+    "illuminate/database": "^5.5.0|^6.0|^7.0|^8.0|^9.0|^10.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^7.0.0",
