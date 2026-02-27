@@ -4,3 +4,5 @@
 composer.lock
 /tests/clover.xml
 /tests/reports
+.phpunit.cache
+.phpunit.result.cache

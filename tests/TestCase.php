@@ -15,8 +15,9 @@ use Illuminate\Database\Capsule\Manager;
 
 class TestCase extends \PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
+        parent::setUp();
         $this->configureDatabase();
         $this->migrateIdentitiesTable();
     }

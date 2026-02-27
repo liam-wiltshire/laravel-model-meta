@@ -65,3 +65,33 @@ If the name of your meta column is different, then add a `$metaDbField` property
 ```php
 protected $metaDbField = 'metaData';
 ```
+
+# Migration & Compatibility
+
+## Version Compatibility
+
+### Current Version (v1.0+)
+**For Laravel 11 & 12 with PHP 8.2+**
+
+```bash
+composer require liam-wiltshire/laravel-model-meta:^1.0
+```
+
+**Requirements:**
+- PHP `^8.2`
+- Laravel `^11.0|^12.0`
+- PHPUnit `^10.0|^11.0` (dev)
+
+### Legacy Version (v0.5.x)
+**For Laravel 5.5-10 with PHP 7.1+**
+
+```bash
+composer require liam-wiltshire/laravel-model-meta:^0.5
+```
+
+**Requirements:**
+- PHP `^7.1|^8.0`
+- Laravel `^5.5|^6.0|^7.0|^8.0|^9.0|^10.0`
+- PHPUnit `^7.0` (dev)
+
+**Note:** If you're running an older version of Laravel or PHP, continue using v0.5.x. Version 1.0+ includes breaking changes related to minimum PHP and Laravel version requirements.
