@@ -134,4 +134,24 @@ trait HasMeta
 
         parent::save($options);
     }
+    
+    /**
+     * Unset a meta field by key
+     * @param string $key
+     * @return $this
+     */
+
+    public function unsetMeta(string $key): Model
+    {
+        $meta = $this->getMetaData();
+
+        if (isset($meta->{$key})) {
+            unset($meta->{$key});
+
+            parent::setAttribute($this->getMetaDbField(), $meta);
+            parent::save();
+        }
+
+        return $this;
+    }
 }
